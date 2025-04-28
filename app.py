@@ -23,7 +23,7 @@ def get_f1_fixtures():
 
 # Function to fetch Cricket fixtures for the current year
 def get_cricket_fixtures():
-    url = 'https://api.cricapi.com/v1/series?apikey=b84776b6-b0dd-4456-8111-6923e9459f0e&offset=0'
+    url = 'https://api.cricapi.com/v1/series?apikey=' # Add your API KEY
     response = requests.get(url)
 
     if response.status_code == 200:
@@ -72,7 +72,7 @@ def get_cricket_fixtures():
 
 # Function to fetch Football fixtures for the current year
 def get_football_fixtures():
-    api_token = "2cb57e531fd149d58a62cc2f1328931a"  # Replace with your API key
+    api_token = ""  # Add your API KEY
     headers = {"X-Auth-Token": api_token}
 
     competitions = {
