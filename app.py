@@ -31,7 +31,7 @@ def get_cricket_fixtures():
         series = []
         if 'data' in data:
             for series_info in data['data']:
-                # Use correct date format for startDate and endDate
+                
                 try:
                     series_start_date = datetime.strptime(series_info['startDate'], "%Y-%m-%d").date()
                     series_end_date = datetime.strptime(series_info['endDate'], "%Y-%m-%d").date()
@@ -60,15 +60,15 @@ def get_cricket_fixtures():
                     'T20s': series_info['t20'],
                     'Tests': series_info['test'],
                     'Matches Loaded': series_info['matches'],
-                    'Status': status  # Adding the status field
+                    'Status': status  
                 }
                 series.append(series_info_dict)
 
             return pd.DataFrame(series)
         else:
-            return pd.DataFrame()  # Return empty DataFrame if 'data' key not found
+            return pd.DataFrame()  
     else:
-        return pd.DataFrame()  # Return empty DataFrame i
+        return pd.DataFrame()  
 
 # Function to fetch Football fixtures for the current year
 def get_football_fixtures():
@@ -107,10 +107,8 @@ def get_football_fixtures():
 def main():
     st.title("Sports Fixtures")
 
-    # Get the current year
     current_year = datetime.now().year
 
-    # Select sport
     sport = st.selectbox("Select sport", ["Football", "F1", "Cricket"])
 
     # F1 fixtures
